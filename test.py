@@ -11,6 +11,7 @@ def train(keys,values):
 	ascii_values = [ord(c) for c in keys]
 	values = np.array(values).reshape(len(values),1)
 	ascii_values = np.array(ascii_values).reshape(len(ascii_values),1)
+	X_train, X_test, y_train, y_test = train_test_split(ascii_values, values, test_size = 1/3, random_state = 0)
 	regressor = LinearRegression()
 	regressor.fit(X_train, y_train)
 
